@@ -1,0 +1,46 @@
+Actualyze CLI License
+
+Copyright (c) 2026 ActualyzeAI, Inc. All rights reserved.
+
+This license governs the Actualyze command-line interface binaries and the
+accompanying files distributed with them (the "Software").
+
+1. License grant. Subject to these terms and to the Actualyze Terms of
+   Service (https://actualyze.ai/terms/service), ActualyzeAI, Inc. grants
+   you a limited, non-exclusive, non-transferable, royalty-free license to
+   download, install, and use the Software to access Actualyze services
+   that you are authorized to use.
+
+2. Internal redistribution. You may copy and redistribute unmodified
+   copies of the Software within your organization, including on internal
+   mirrors and in air-gapped environments, provided each copy retains all
+   copyright, license, and attribution files distributed with it.
+
+3. Restrictions. Except as expressly permitted above or required by
+   applicable law notwithstanding this limitation, you may not:
+   (a) modify, adapt, or create derivative works of the Software;
+   (b) reverse engineer, decompile, or disassemble the Software;
+   (c) distribute, sublicense, rent, lease, or sell the Software to any
+   third party; or (d) remove or alter any proprietary notices in or
+   accompanying the Software.
+
+4. Third-party software. The Software includes third-party components
+   licensed under their own terms. Those terms, and the notices they
+   require, are set out in the NOTICE.txt file distributed with each
+   release and govern the corresponding components.
+
+5. Ownership. The Software is licensed, not sold. ActualyzeAI, Inc. and
+   its licensors retain all right, title, and interest in and to the
+   Software.
+
+6. Warranty and liability. The warranty disclaimers and limitations of
+   liability in the Actualyze Terms of Service apply to the Software. If
+   no agreement between you and ActualyzeAI, Inc. is in effect, THE
+   SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, AND
+   ACTUALYZEAI, INC. DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED,
+   INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+   PURPOSE, AND NON-INFRINGEMENT, TO THE MAXIMUM EXTENT PERMITTED BY LAW.
+
+7. Termination. This license terminates automatically if you breach it.
+   Upon termination you must stop using the Software and destroy all
+   copies in your possession or control.
