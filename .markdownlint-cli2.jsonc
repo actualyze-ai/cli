@@ -1,0 +1,10 @@
+{
+  // Rules kept aligned with actualyze-ai/customer-docs. The README opens with
+  // an inline-HTML theme-aware logo block and uses long prose lines.
+  "config": {
+    "MD013": false, // line length
+    "MD033": false, // inline HTML (logo <picture> block)
+    "MD041": false // first line in file need not be a heading (logo block)
+  },
+  "ignores": ["node_modules/**"]
+}
