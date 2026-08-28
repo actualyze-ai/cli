@@ -69,4 +69,4 @@ Native installs (from the scripts above) keep themselves current: the CLI checks
 
 ## License
 
-The Actualyze CLI is proprietary software © ActualyzeAI, Inc. Third-party license notices ship with each release as `NOTICE.txt`.
+The Actualyze CLI is proprietary software © ActualyzeAI, Inc., distributed under the [Actualyze CLI License](LICENSE.txt), which also ships with each release. Third-party license notices ship with each release as `NOTICE.txt`.
