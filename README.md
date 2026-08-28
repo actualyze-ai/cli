@@ -52,6 +52,17 @@ If your organization runs its own Actualyze deployment, set the `ACTUALYZE_URL` 
 
 Every release ships a `checksums.txt`. The install scripts verify SHA-256 checksums automatically after download, and the built-in self-updater verifies the same checksums as it downloads.
 
+Release assets also carry GitHub build-provenance attestation. Download `attestations.jsonl` from the release and run:
+
+```sh
+gh attestation verify actualyze-linux-x64 \
+  --bundle attestations.jsonl \
+  --repo actualyze-ai/atlas \
+  --signer-workflow actualyze-ai/atlas/.github/workflows/cli-release.yml
+```
+
+This proves the exact bytes were built by the Actualyze CLI release workflow, independently of this download channel (`gh` fetches the Sigstore trusted root on its own via TUF). For air-gapped verification, run `gh attestation trusted-root > trusted_root.jsonl` on a trusted online machine first, then add `--custom-trusted-root trusted_root.jsonl`.
+
 ## Updating
 
 Native installs (from the scripts above) keep themselves current: the CLI checks for new releases in the background and prints a notice when one is available, and `actualyze update` downloads, verifies, and installs the update in place. Installs managed by a package manager defer to that manager's own update mechanism. Set `ACTUALYZE_NO_UPDATE_CHECK=1` to suppress the background check and notice — useful in CI pipelines and scripts.
