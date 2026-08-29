@@ -52,14 +52,23 @@ If your organization runs its own Actualyze deployment, set the `ACTUALYZE_URL` 
 
 Every release ships a `checksums.txt`. The install scripts verify SHA-256 checksums automatically after download, and the built-in self-updater verifies the same checksums as it downloads.
 
-Release assets also carry GitHub build-provenance attestation. Download `attestations.jsonl` from the release and run:
+Release assets also carry GitHub build-provenance attestation, and verification is **digest-based** — it works on your installed `actualyze` executable, not just on downloaded release assets. First download the attestation bundle for the release you installed (`actualyze version` prints your version):
 
 ```sh
-gh attestation verify actualyze-linux-x64 \
+gh release download "cli/v$(actualyze version | awk 'NR==1 {print $2}')" \
+  --repo actualyze-ai/cli --pattern attestations.jsonl
+```
+
+Then verify the installed command in place:
+
+```sh
+gh attestation verify "$(command -v actualyze)" \
   --bundle attestations.jsonl \
   --repo actualyze-ai/atlas \
   --signer-workflow actualyze-ai/atlas/.github/workflows/cli-release.yml
 ```
+
+On Windows, verify `(Get-Command actualyze).Source` after downloading `attestations.jsonl` from the release page matching `actualyze version`. To verify a directly downloaded release asset instead, pass its filename (e.g. `actualyze-linux-x64`).
 
 This proves the exact bytes were built by the Actualyze CLI release workflow, independently of this download channel (`gh` fetches the Sigstore trusted root on its own via TUF). For air-gapped verification, run `gh attestation trusted-root > trusted_root.jsonl` on a trusted online machine first, then add `--custom-trusted-root trusted_root.jsonl`.
 
